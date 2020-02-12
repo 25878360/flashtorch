@@ -114,7 +114,7 @@ class GradientAscent:
 
         if input_ is None:
             input_ = np.uint8(np.random.uniform(
-                150, 180, (self._img_size, self._img_size, 3)))
+                150, 180, (self._img_size, self._img_size, 1)))
             input_ = apply_transforms(input_, size=self._img_size)
 
         if torch.cuda.is_available() and self.use_gpu:
