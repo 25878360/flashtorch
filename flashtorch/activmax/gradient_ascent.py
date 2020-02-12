@@ -122,8 +122,8 @@ class GradientAscent:
             self.model = self.model.to('cuda')
             input_ = input_.to('cuda')
             #here
-        self.model = self.model.to('cuda')
-        input_ = input_.to('cuda')
+        self.model = self.model.to('cuda:0')
+        input_ = input_.to('cuda:0')
 
         # Remove previous hooks if any
 
