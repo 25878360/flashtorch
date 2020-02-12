@@ -288,6 +288,9 @@ class GradientAscent:
 
     def _ascent(self, x, num_iter):
         output = []
+        output = output.to('cuda:0')
+        x = 0
+        x = x.to('cuda:0')
 
         for i in range(num_iter):
             self.model(x)
