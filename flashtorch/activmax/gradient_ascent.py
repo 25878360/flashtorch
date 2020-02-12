@@ -122,8 +122,8 @@ class GradientAscent:
             self.model = self.model.to('cuda')
             input_ = input_.to('cuda')
             #here
-        self.model = self.model.to('cuda:0')
-        input_ = input_.to('cuda:0')
+        self.model = self.model.to('cpu')
+        input_ = input_.to('cpu')
 
         # Remove previous hooks if any
 
@@ -288,8 +288,6 @@ class GradientAscent:
 
     def _ascent(self, x, num_iter):
         output = []
-        output = output.to('cuda:0')
-        self.gradients = self.gradients.to('cuda:0')
 
         for i in range(num_iter):
             self.model(x)
