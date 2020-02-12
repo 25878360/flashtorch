@@ -11,7 +11,8 @@ from flashtorch.utils import (apply_transforms,
                               format_for_plotting,
                               load_image,
                               standardize_and_clip)
-
+# Device configuration
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 class GradientAscent:
     """Provides an interface for activation maximization via gradient descent.
