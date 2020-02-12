@@ -121,6 +121,9 @@ class GradientAscent:
         if torch.cuda.is_available() and self.use_gpu:
             self.model = self.model.to('cuda')
             input_ = input_.to('cuda')
+            #here
+        self.model = self.model.to('cuda')
+        input_ = input_.to('cuda')
 
         # Remove previous hooks if any
 
